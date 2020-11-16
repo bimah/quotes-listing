@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import Page from './components/Page';
 
 render(
-  <App />,
+  <Page />,
   document.getElementById('app'),
 );

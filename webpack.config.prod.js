@@ -83,7 +83,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Currency Exchange',
+      title: 'Qoutes listing',
       template: 'index.html'
     })
   ],

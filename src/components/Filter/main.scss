@@ -1,0 +1,35 @@
+@use '../../styles/config';
+
+.filter {
+  position: relative;
+  background: none;
+  border: 0;
+  color: config.$light-grey;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  &:hover {
+    color: config.$black;
+    background-color: rgba(config.$light-grey, 0.03);
+  }
+
+  &-selected {
+    background-color: rgba(config.$light-grey, 0.05);
+    cursor: inherit;
+    color: config.$black;
+
+    &:hover {
+      background-color: rgba(config.$light-grey, 0.05);
+    }
+  }
+
+  span {
+    font-size: smaller;
+    vertical-align: super;
+    padding-left: 3px;
+    color: rgba(config.$light-grey, 0.4);;
+  }
+}

@@ -1,0 +1,36 @@
+@use '../../styles/config';
+
+:global {
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    color: config.$light-grey;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: config.$lighter-grey;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: config.$primary;
+    font-style: italic;
+    margin: 50px 0;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+}
