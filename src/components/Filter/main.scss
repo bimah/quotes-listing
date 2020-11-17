@@ -1,13 +1,14 @@
 @use '../../styles/config';
+@use '../../styles/tools';
 
 .filter {
   position: relative;
   background: none;
   border: 0;
   color: config.$light-grey;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 500;
-  padding: 10px 15px;
+  padding: tools.px-to-rem(10px) 1rem;
   cursor: pointer;
   transition: all 200ms ease;
 
@@ -29,7 +30,7 @@
   span {
     font-size: smaller;
     vertical-align: super;
-    padding-left: 3px;
+    padding-left: tools.px-to-rem(3px);
     color: rgba(config.$light-grey, 0.4);;
   }
 }

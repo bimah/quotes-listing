@@ -1,4 +1,5 @@
 @use '../../styles/config';
+@use '../../styles/tools';
 
 .filters__list {
   list-style: none;
@@ -7,6 +8,6 @@
 
   li {
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 tools.px-to-rem(5px);
   }
 }

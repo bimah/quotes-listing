@@ -1,4 +1,5 @@
 @use '../../styles/config';
+@use '../../styles/tools';
 
 :global {
   * {
@@ -19,7 +20,7 @@
     font-weight: bold;
     color: config.$primary;
     font-style: italic;
-    margin: 50px 0;
+    margin: tools.px-to-rem(50px) 0;
   }
 
   h3 {
@@ -31,6 +32,6 @@
 
 .main-content {
   width: 100%;
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: config.$breakpoint-lrg;
+  margin: tools.px-to-rem(50px) auto;
 }

@@ -1,0 +1,19 @@
+@use '../../styles/config';
+@use '../../styles/tools';
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 4rem;
+  height: tools.px-to-rem(40px);
+  line-height: tools.px-to-rem(40px);
+  text-align: center;
+  background-color: config.$primary-action;
+  color: config.$white;
+  font-size: tools.px-to-rem(20px);
+  border-radius: tools.px-to-rem(30px);
+
+  &:hover {
+    background-color: config.$primary-action-dark;
+  }
+}

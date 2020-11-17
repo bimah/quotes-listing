@@ -1,24 +1,25 @@
 @use '../../styles/config';
+@use '../../styles/tools';
 
 .quote {
   position: relative;
   display: block;
   text-align: left;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   background-color: config.$white;
-  box-shadow: 0 5px 16px 0 rgba(config.$black, 0.1);
-  margin-top: 20px;
+  box-shadow: 0 tools.px-to-rem(5px) 1rem 0 rgba(config.$black, 0.1);
+  margin-top: tools.px-to-rem(20px);
 
   &__title {
     position: absolute;
-    top: -20px;
+    top: tools.px-to-rem(-20px);
     left: 0;
     width: 100%;
     text-align: center;
 
-    @media screen and (min-width: 765px) {
-      padding-left: 20px;
+    @media screen and (min-width: config.$breakpoint-md) {
+      padding-left: tools.px-to-rem(20px);
       text-align: left;
     }
 
@@ -27,33 +28,45 @@
       color: config.$white;
       background-color: config.$primary;
       border-radius: 100px;
-      padding: 15px 20px;
+      padding: 1rem tools.px-to-rem(20px);
       border-bottom: 1px solid config.$primary-dark;
     }
   }
 
   &__content {
-    padding: 40px 20px 20px;
+    padding: 4rem tools.px-to-rem(20px) 3rem;
     display: flex;
     flex-flow: column;
 
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: config.$breakpoint-md) {
       flex-flow: row;
     }
 
     &-item {
       width: 100%;
-      padding: 10px;
-      border-top: 1px solid config.$lighter-grey;
+      padding: tools.px-to-rem(10px);
+      border-bottom: 1px solid config.$lighter-grey;
 
-      @media screen and (min-width: 765px) {
-        border-left: 1px solid config.$lighter-grey;
-        border-top: 0;
+      @media screen and (min-width: config.$breakpoint-md) {
+        border-right: 1px solid config.$lighter-grey;
+        border-bottom: 0;
         flex: 1;
       }
 
-      &:first-child {
+      &:last-child {
         border: 0;
+      }
+
+      &--center {
+        align-self: center;
+        text-align: center;
+
+        @media screen and (max-width: config.$breakpoint-md) {
+          display: block;
+          position: absolute;
+          width: 100%;
+          bottom: tools.px-to-rem(-30px);
+        }
       }
     }
   }

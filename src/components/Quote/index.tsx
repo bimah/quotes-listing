@@ -3,6 +3,8 @@ import classnames from 'classnames/bind';
 
 import styles from './main.scss';
 
+import Link from '../Link';
+
 const cx = classnames.bind(styles);
 
 const Quote:FunctionComponent = () => (
@@ -12,7 +14,7 @@ const Quote:FunctionComponent = () => (
     </div>
     <div className={styles['quote__content']}>
       <div className={cx('quote__content-info', 'quote__content-item')}>
-        <p>info</p>
+        <p>Quote details:</p>
       </div>
       <div className={cx('quote__content-price', 'quote__content-item')}>
         <p>price</p>
@@ -21,8 +23,8 @@ const Quote:FunctionComponent = () => (
         <p>price</p>
         <p>price</p>
       </div>
-      <div className={cx('quote__content-action', 'quote__content-item')}>
-        <p>cta</p>
+      <div className={cx('quote__content-action', 'quote__content-item', 'quote__content-item--center')}>
+        <Link>Action</Link>
       </div>
     </div>
   </div>

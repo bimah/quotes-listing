@@ -1,12 +1,15 @@
+@use '../../styles/config';
+@use '../../styles/tools';
+
 .quotes-listing {
-  padding: 0 20px;
+  padding: 0 tools.px-to-rem(20px);
   text-align: center;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: config.$breakpoint-lrg) {
     padding: 0;
   }
 
   &__quotes {
-    padding: 20px 0;
+    padding: tools.px-to-rem(20px) 0;
   }
 }
