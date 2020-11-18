@@ -9,7 +9,7 @@
   border-bottom-right-radius: 0.5rem;
   background-color: config.$white;
   box-shadow: 0 tools.px-to-rem(5px) 1rem 0 rgba(config.$black, 0.1);
-  margin-top: tools.px-to-rem(20px);
+  margin: tools.px-to-rem(40px) 0 tools.px-to-rem(60px);
 
   &__title {
     position: absolute;
@@ -45,17 +45,25 @@
     &-item {
       width: 100%;
       padding: tools.px-to-rem(10px);
-      border-bottom: 1px solid config.$lighter-grey;
+
+      &:first-child {
+        border-bottom: 1px solid config.$lighter-grey;
+      }
 
       @media screen and (min-width: config.$breakpoint-md) {
         border-right: 1px solid config.$lighter-grey;
         border-bottom: 0;
         flex: 1;
+
+        &:first-child {
+          border-bottom: 0;
+        }
+
+        &:last-child {
+          border: 0;
+        }
       }
 
-      &:last-child {
-        border: 0;
-      }
 
       &--center {
         align-self: center;
@@ -67,6 +75,26 @@
           width: 100%;
           bottom: tools.px-to-rem(-30px);
         }
+      }
+    }
+
+    &-price {
+      text-align: center;
+
+      &__half {
+        padding: tools.px-to-rem(30px) 0;
+        border-bottom: 1px solid config.$lighter-grey;
+
+        &:last-child {
+          border: 0;
+        }
+      }
+
+      &__amount {
+        font-size: 2rem;
+        font-weight: bold;
+        font-style: italic;
+        color: config.$primary-dark;
       }
     }
   }

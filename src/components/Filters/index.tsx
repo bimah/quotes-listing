@@ -1,23 +1,58 @@
-import React, { FunctionComponent } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 
 import styles from './main.scss';
 
 import Filter from '../Filter';
 
-const Filters:FunctionComponent = () => (
-  <nav aria-label="Filter your quotes" aria-controls="quotes">
-      <ul className={styles['filters__list']}>
-        <li>
-          <Filter label="All" qty={7} selected />
-        </li>
-        <li>
-          <Filter label="Car" qty={3} />
-        </li>
-        <li>
-          <Filter label="Pet" qty={4} />
-        </li>
-      </ul>
-    </nav>
-);
+type Quote = {
+  id: number,
+  product: string,
+  name: string,
+  price: number,
+  features: Record<string, unknown>[]
+}
+
+type FiltersProps = {
+  items: Quote[],
+  handleFilter: (string) => void
+};
+
+const Filters:FunctionComponent<FiltersProps> = ({ items, handleFilter }) => {
+  const [selected, setSelected] = useState<string>('all');
+
+  const filterQuotes = (filter: string): void => {
+    setSelected(filter);
+    handleFilter(filter);
+  };
+
+  const filters = ():string[] => {
+    const finalFilters = [];
+    items.forEach(item => {
+      if (!finalFilters.includes(item.product)) finalFilters.push(item.product);
+    });
+    return finalFilters;
+  };
+
+  return items.length > 1 ? (
+    <nav aria-label="Filter your quotes" aria-controls="quotes">
+        <ul className={styles['filters__list']}>
+          <li>
+            <Filter label="all" qty={items?.length} selected={selected === 'all'} handleClick={() => filterQuotes('all')} />
+          </li>
+          {filters().map((filter:string) => (
+            <li key={filter}>
+                <Filter
+                  label={filter}
+                  qty={items.filter(item => item.product === filter).length}
+                  selected={selected === filter}
+                  handleClick={() => filterQuotes(filter)}
+                />
+            </li>
+          ))
+          }
+        </ul>
+      </nav>
+    ) : null;
+};
 
 export default Filters;

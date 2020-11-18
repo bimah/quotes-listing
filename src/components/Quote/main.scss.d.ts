@@ -5,6 +5,9 @@ interface CssExports {
   'quote__content': string;
   'quote__content-item': string;
   'quote__content-item--center': string;
+  'quote__content-price': string;
+  'quote__content-price__amount': string;
+  'quote__content-price__half': string;
   'quote__title': string;
 }
 export const cssExports: CssExports;
