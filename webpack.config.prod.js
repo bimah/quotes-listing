@@ -7,7 +7,7 @@ const Sass = require('sass');
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/index.tsx'
+    app: ['whatwg-fetch', './src/index.tsx']
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.scss']
