@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const Sass = require('sass');
 
@@ -22,14 +21,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    /* new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'images'),
-          to: 'images'
-        }
-      ]
-    }), */
     new ESLintPlugin({
       extensions: ['js', 'tsx']
     }),

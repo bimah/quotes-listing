@@ -11,11 +11,11 @@ type FiltersProps = {
   label: string,
   qty: number,
   selected?: boolean,
-  handleClick: () => void
+  handleClick?: () => void
 };
 
 const Filter:FunctionComponent<FiltersProps> = ({ label, qty, selected,handleClick }) => (
-  <button type="button" aria-pressed={selected} className={cx('filter', { 'filter-selected': selected })} onClick={handleClick}>
+  <button type="button" aria-pressed={selected} className={cx('filter', { 'filter-selected': selected })} onClick={handleClick} data-testid="filter">
     {capitaliseFirstLetter(label)}
     {qty ? <span>{qty}</span> : null}
   </button>
@@ -23,7 +23,8 @@ const Filter:FunctionComponent<FiltersProps> = ({ label, qty, selected,handleCli
 
 Filter.defaultProps = {
   selected: false,
-  qty: null
+  qty: null,
+  handleClick: null
 };
 
 export default Filter;

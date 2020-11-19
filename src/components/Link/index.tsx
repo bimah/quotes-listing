@@ -7,7 +7,7 @@ type LinkProps = {
 };
 
 const Link:FunctionComponent<LinkProps> = ({ children, url }) => (
-  <a href={url} className={styles.link}>
+  <a href={url} className={styles.link} data-testid="link">
     {children}
   </a>
 );

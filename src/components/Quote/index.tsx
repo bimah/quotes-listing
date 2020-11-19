@@ -22,7 +22,7 @@ type QuoteProps = {
 };
 
 const Quote:FunctionComponent<QuoteProps> = ({ item }) => (
-  <div className={styles.quote}>
+  <div className={styles.quote} data-testid="quote">
     <div className={styles['quote__title']}>
       <h3>{item.name}</h3>
     </div>

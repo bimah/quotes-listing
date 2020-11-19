@@ -14,7 +14,7 @@ type Quote = {
 
 type FiltersProps = {
   items: Quote[],
-  handleFilter: (string) => void
+  handleFilter?: (string) => void
 };
 
 const Filters:FunctionComponent<FiltersProps> = ({ items, handleFilter }) => {
@@ -34,7 +34,7 @@ const Filters:FunctionComponent<FiltersProps> = ({ items, handleFilter }) => {
   };
 
   return items.length > 1 ? (
-    <nav aria-label="Filter your quotes" aria-controls="quotes">
+    <nav aria-label="Filter your quotes" aria-controls="quotes" data-testid="filters">
         <ul className={styles['filters__list']}>
           <li>
             <Filter label="all" qty={items?.length} selected={selected === 'all'} handleClick={() => filterQuotes('all')} />
@@ -53,6 +53,10 @@ const Filters:FunctionComponent<FiltersProps> = ({ items, handleFilter }) => {
         </ul>
       </nav>
     ) : null;
+};
+
+Filters.defaultProps = {
+  handleFilter: () => null
 };
 
 export default Filters;
